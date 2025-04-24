@@ -1,149 +1,337 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Umar Ilyas - Resume</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Umar Ilyas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-    <!----------------------- CDN FOR ICONS -------------------------->
+        .container {
+            background-color: #2e3b4e;
+            color: white;
+            padding: 40px;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    .header {
-      background: #2c3e50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      padding-bottom: 20px;
-    }
-    header p{
-        margin-bottom: 25px;
-    }
-    .container {
-      max-width: 900px;
-      margin: -30px auto 30px auto;
-      background: #fff;
-      padding: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      border-radius: 10px;
-    }
-    .section {
-      margin-top: 30px;
-    }
-    h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .contact i {
-      margin-right: 8px;
-      color: #2c3e50;
-    }
-    .contact p {
-      margin: 5px 0;
-    }
-    .two-column {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .two-column > div {
-      flex: 1 1 45%;
-    }
-    a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        .info {
+            max-width: 70%;
+        }
+
+        .info h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .info h2 {
+            font-size: 18px;
+            color: #36b6bd;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .info p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .profile-pic {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            border: 5px solid #36b6bd;
+            border-radius: 50%;
+            overflow: hidden;
+            width: 130px;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact-bar {
+            background-color: #1e252f;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item img {
+            width: 18px;
+            height: 18px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile-pic {
+                position: static;
+                margin-top: 20px;
+                align-self: center;
+            }
+
+            .info {
+                max-width: 100%;
+            }
+
+            .contact-bar {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+        }
+
+        .main-content {
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 40px;
+        }
+
+        .education-section {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .education-section .left-section,
+        .education-section .right-section {
+            flex: 1;
+        }
+
+        h2 {
+            color: #008080;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-item h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .education-item p {
+            margin: 5px 0;
+        }
+
+        .skills-item span {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #333;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 5px 5px 0 0;
+            font-size: 14px;
+        }
+
+        .languages {
+            margin-top: 20px;
+        }
+
+        .language-item {
+            margin-bottom: 10px;
+        }
+
+        .language-item h4 {
+            margin: 0;
+        }
+
+        .language-item p {
+            margin: 5px 0 0;
+            color: #666;
+        }
+
+        /* Personal Projects Section */
+        .projects-interests {
+            display: flex;
+            gap: 40px;
+        }
+
+        .projects,
+        .interests {
+            flex: 1;
+        }
+
+        .projects h2,
+        .interests h2 {
+            color: #008080;
+        }
+
+        .project-item {
+            margin-bottom: 20px;
+        }
+
+        .project-item h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .project-item p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+
+        .interests-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .interest-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="header">
-    <h1>UMAR ILYAS</h1>
-    <p>Software Engineer | Web Developer</p>
-  </div>
-
-  <div class="container">
-    <div class="section contact">
-      <p><i class="fas fa-envelope"></i> <a href="mailto:umarilyas389@gmail.com">umarilyas389@gmail.com</a></p>
-      <p><i class="fas fa-phone"></i> +92 320 5916577</p>
-      <p><i class="fas fa-map-marker-alt"></i> Sialkot, Pakistan</p>
+    <div class="container">
+        <div class="info">
+            <h1>Umar Ilyas</h1>
+            <h2>Frontend Developer | Software Engineer</h2>
+            <p>
+                I am a passionate and dedicated Frontend Web Developer currently building strong expertise in modern web technologies. I focus on creating clean, responsive, and user-friendly web applications, with a growing skillset in React.js, Next.js, HTML, CSS, and JavaScript. I am also expanding my knowledge into backend development with Node.js and Express, aiming to become a full stack MERN developer.
+            </p>
+        </div>
+        <div class="profile-pic">
+            <img src="pp.jpg" alt="Umar Ilyas" />
+        </div>
     </div>
 
-    <div class="section">
-      <h2>Skills</h2>
-      <p>C++ , HTML , CSS , Tailwind , JavaScript , ReactJS , SQL </p>
+    <div class="contact-bar">
+        <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon" />
+            <span>umarilyas389@gmail.com</span>
+        </div>
+        <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone Icon" />
+            <span>+923205916577</span>
+        </div>
+        <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location Icon" />
+            <span>Rangers Road, Sialkot, Pakistan</span>
+        </div>
     </div>
 
-    <div class="section">
-      <h2>Languages</h2>
-      <p>Urdu (Native), English (Professional Proficiency)</p>
-    </div>
-
-    <div class="section">
-      <h2>Interests</h2>
-      <ul>
-        <li>Learning about new technologies like Framer Web-Flow Cursor</li>
-        <li>Observing New Developments</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Education</h2>
-      <div class="two-column">
-        <div>
-          <h3>Software Engineering</h3> 
-          <p>University of Management and Technology</p>
-          <p>10/2022 - Present, Sialkot</p>
+   
+    <div class="main-content">
+        <div class="education-section">
           
+            <div class="left-section">
+                <div class="section">
+                    <h2>EDUCATION</h2>
+                    <div class="education-item">
+                        <h3>BS Software Engineering</h3>
+                        <p>University of Management and Technology, Sialkot</p>
+                        <p><i>2022 - Present</i></p>
+                        <p><strong>CGPA:</strong> 2.6 </p>
+                    </div>
+                    <div class="education-item">
+                        <h3>FSc Pre Engineering</h3>
+                        <p>Superior College, Chawinda</p>
+                        <p><i>2020 - 2022</i></p>
+                        <p><strong>85%</strong></p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Matriculation in Science</h3>
+                        <p>Unique Public School - Chawinda</p>
+                        <p><i>201 - 2019</i></p>
+                        <p><strong>91%</strong></p>
+                    </div>
+                </div>
+            </div>
+       
+            <div class="right-section">
+                <div class="section">
+                    <h2>SKILLS</h2>
+                    <div class="skills-item">
+                        <span>C++</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Tailwind</span>
+                        <span>SASS/SCSS</span>
+                        <span>JavaScript</span>
+                        <span>React.js</span>
+                        
+                    </div>
+                </div>
+
+                <div class="section languages">
+                    <h2>LANGUAGES</h2>
+                    <div class="language-item">
+                        <h4>Urdu</h4>
+                        <p>Native or Bilingual Proficiency</p>
+                    </div>
+                    <div class="language-item">
+                        <h4>English</h4>
+                        <p>Professional Working Proficiency</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-          <h3>Intermediate</h3>
-          <p>Superior College Chawinda</p>
-          <p>2019 - 2021, Chawinda</p>
+
+ 
+        <div class="projects-interests">
+       
+            <div class="projects">
+                <h2>PERSONAL PROJECTS</h2>
+                <div class="project-item">
+                    <h3>Export Website</h3>
+                    <p>
+                        Built a export website using Wordpress.
+                        <a href="http://evoluxcustomapparel.com">Site here</a>
+                    </p>
+                </div>
+            </div>
+
+      
+            <div class="interests">
+                <h2>INTERESTS</h2>
+                <div class="interests-list">
+                    <div class="interest-item">Exploring new web development frameworks</div>
+                    <div class="interest-item">Contributing to open-source projects</div>
+                    <div class="interest-item">Building personal tech projects</div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
-    <div class="section">
-      <h2>Work Experience</h2>
-      <h3>Freelancing - Web Developer</h3>
-      <p>Self-employed | 2022 - Present</p>
-      <ul>
-          <li>Web Developer</li>
-        <li>Data Scraping</li>
-        <li>Web Scraping</li>
-        <li>Graphic Designing</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Certificates</h2>
-      <p>Office Management (04/2022 - 06/2022)</p>
-      <p>Graphic Designing (09/2024 - 02/2025)</p>
-    </div>
-
-    <div class="section">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Sidcup Clone</strong> Using HTML CSS JS and GSAP</li>
-        <li><strong>Study Sync Project</strong> Using HTML CSS</li>
-        <li><strong>E-Com Site</strong> Wordpress <a href="http://evoluxcustomapparel.com">evoluxcustomapparel.com</a></li>
-      </ul>
-    </div>
-  </div>
 </body>
+
 </html>
